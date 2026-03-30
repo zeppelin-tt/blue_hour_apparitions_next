@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:vm": "STATIC_EXPORT=true NEXT_PUBLIC_BASE_PATH=/blue_hour_apparitions next build",
     "start": "next start",
     "lint": "eslint"
   },

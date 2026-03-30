@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { useRouter } from 'next/navigation';
 import type { Release } from '../data/types';
 import TypeBadge from './TypeBadge';
 import ReleaseDetail from './ReleaseDetail';
@@ -12,14 +11,13 @@ interface AlbumItemProps {
   isExpanded: boolean;
   isShrunk: boolean;
   onToggle: () => void;
+  onLinksClick: () => void;
 }
 
-const AlbumItem: React.FC<AlbumItemProps> = ({ release, isExpanded, isShrunk, onToggle }) => {
-  const router = useRouter();
-
+const AlbumItem: React.FC<AlbumItemProps> = ({ release, isExpanded, isShrunk, onToggle, onLinksClick }) => {
   const handleLinksClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    router.push(`/album/${release.slug}/links`);
+    onLinksClick();
   };
 
   return (

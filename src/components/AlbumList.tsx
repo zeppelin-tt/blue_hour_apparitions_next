@@ -9,9 +9,10 @@ interface AlbumListProps {
   releases: Release[];
   expandedSlug: string | undefined;
   onToggle: (slug: string) => void;
+  onLinksClick: (slug: string) => void;
 }
 
-const AlbumList: React.FC<AlbumListProps> = ({ releases, expandedSlug, onToggle }) => {
+const AlbumList: React.FC<AlbumListProps> = ({ releases, expandedSlug, onToggle, onLinksClick }) => {
   const anyExpanded = expandedSlug != null;
 
   return (
@@ -28,6 +29,7 @@ const AlbumList: React.FC<AlbumListProps> = ({ releases, expandedSlug, onToggle 
               isExpanded={isExpanded}
               isShrunk={isShrunk}
               onToggle={() => onToggle(release.slug)}
+              onLinksClick={() => onLinksClick(release.slug)}
             />
             {!isLast && (
               <div
