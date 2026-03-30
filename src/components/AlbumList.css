@@ -1,0 +1,16 @@
+.album-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.album-list__divider {
+  height: 1px;
+  background-color: var(--border-default);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  margin-block: 10px;
+}
+
+.album-list__divider--faded {
+  opacity: 0.25;
+}

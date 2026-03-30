@@ -1,0 +1,198 @@
+/* ── Обёртка страницы ────────────────────────────────────────────── */
+.alp {
+  min-height: 100dvh;
+  background: var(--bg-dark);
+}
+
+.alp--not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.alp__error {
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+/* ── 4. Липкая шапка (не уезжает при скролле) ───────────────────── */
+.alp__header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: rgba(10, 21, 37, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(20, 32, 56, 0.6);
+}
+
+/* ── Кнопка «к исполнителю» ─────────────────────────────────────── */
+.alp__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px 10px 10px;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #5A8EC2;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  transition: background 0.15s ease;
+  min-height: 44px; /* iOS HIG tap target */
+}
+
+.alp__back:hover {
+  background: rgba(90, 142, 194, 0.08);
+}
+
+.alp__back:active {
+  background: rgba(90, 142, 194, 0.16);
+}
+
+/* ── 2. Основной контент — ширина +30% (420 → 546px) ────────────── */
+.alp__main {
+  width: 100%;
+  max-width: 546px;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding-bottom: max(40px, env(safe-area-inset-bottom, 40px));
+}
+
+/* ── 3. Обложка = вся ширина контейнера (546px или 100vw) ────────── */
+/* Выезжаем за горизонтальные паддинги main через отрицательные margin */
+.alp__cover-wrap {
+  width: calc(100% + 40px);   /* компенсируем padding: 0 20px */
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 20px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.55),
+    0 2px 10px rgba(59, 110, 160, 0.18);
+}
+
+.alp__cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── 5. Порядок: исполнитель → название → год+бейдж ─────────────── */
+
+.alp__artist {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2.4px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+.alp__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+
+.alp__meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.alp__year {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-dim);
+}
+
+/* ── Список платформ ─────────────────────────────────────────────── */
+.alp__platforms {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ── 6. Отступы по сторонам у строк платформ ────────────────────── */
+.alp__platform-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 12px;          /* отступ слева и справа */
+  min-height: 56px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  margin: 2px 0;
+  transition: background 0.15s ease, color 0.15s ease;
+  -webkit-tap-highlight-color: rgba(90, 142, 194, 0.12);
+}
+
+.alp__platform-row:hover {
+  background: rgba(90, 142, 194, 0.07);
+  color: var(--text-primary);
+}
+
+.alp__platform-row:active {
+  background: rgba(90, 142, 194, 0.14);
+}
+
+.alp__platform-icon {
+  flex-shrink: 0;
+  filter: brightness(0) saturate(100%) invert(60%) sepia(20%)
+    saturate(400%) hue-rotate(180deg) brightness(90%);
+  transition: filter 0.15s ease;
+}
+
+.alp__platform-row:hover .alp__platform-icon {
+  filter: brightness(0) saturate(100%) invert(100%) brightness(200%);
+}
+
+.alp__platform-name {
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+
+.alp__platform-arrow {
+  flex-shrink: 0;
+  color: var(--text-dim);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.alp__platform-row:hover .alp__platform-arrow {
+  color: var(--text-muted);
+  transform: translateX(2px);
+}
+
+/* ── Мобильные экраны ────────────────────────────────────────────── */
+@media (max-width: 420px) {
+  .alp__title {
+    font-size: 24px;
+  }
+}

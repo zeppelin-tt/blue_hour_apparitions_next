@@ -1,0 +1,26 @@
+.type-badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.type-badge--lp {
+  background-color: #1A3050;
+  color: #5E90CC;
+}
+
+.type-badge--single {
+  background-color: #2A1E4C;
+  color: #9878D8;
+}
+
+.type-badge--ep {
+  background-color: #0F2E28;
+  color: #48A880;
+}

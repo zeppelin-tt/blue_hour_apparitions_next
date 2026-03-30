@@ -1,7 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  basePath: '/blue_hour_apparitions',
+  images: { unoptimized: true },
 };
 
 export default nextConfig;

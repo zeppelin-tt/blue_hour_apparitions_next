@@ -1,0 +1,119 @@
+.release-detail {
+  padding: 20px 20px 24px;
+}
+
+.release-detail__meta {
+  margin-bottom: 16px;
+}
+
+.release-detail__meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.release-detail__year {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.release-detail__total-duration {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.release-detail__name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 26px;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.release-detail__artist {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.release-detail__divider {
+  height: 1px;
+  background-color: var(--border-default);
+  margin: 16px 0;
+  opacity: 0.6;
+}
+
+.release-detail__tracklist {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 24px;
+}
+
+.release-detail__track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.release-detail__track:last-child {
+  border-bottom: none;
+}
+
+.release-detail__track-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  min-width: 20px;
+}
+
+.release-detail__track-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+.release-detail__track-dur {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.release-detail__streaming {
+  margin-top: 20px;
+}
+
+.release-detail__listen-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.release-detail__streaming-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

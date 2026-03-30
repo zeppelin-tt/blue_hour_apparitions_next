@@ -1,0 +1,34 @@
+.artist-links {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+  text-align: center;
+}
+
+.artist-links__horizon {
+  width: 56px;
+  height: 1px;
+  margin: 0 auto 28px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(196, 146, 64, 0.4),
+    transparent
+  );
+}
+
+.artist-links__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+}
+
+.artist-links__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
