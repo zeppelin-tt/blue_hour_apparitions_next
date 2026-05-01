@@ -4,6 +4,26 @@ import { asset } from '../utils/asset';
 export const discography: Release[] = [
   {
     author: 'Blue Hour Apparitions',
+    coAuthor: 'Николай Недорезов',
+    year: 2026,
+    name: 'Повезёт если так',
+    slug: 'povezet-esli-tak',
+    type: 'single',
+    coverPath: asset('covers/2026-povezet-esli-tak.webp'),
+    links: {
+      yandexMusic: 'https://music.yandex.ru/album/41371474?utm_source=desktop&utm_medium=copy_link',
+      spotify: 'https://open.spotify.com/album/5wAG0MMRZ2zoyphIqdPLNu?si=8BMHgkfSRlu6m3x-TgHnTw',
+      vkMusic: 'https://vk.com/music/album/-2000172963_27172963_7e0ef35a12bdc6c1d8',
+      youtubeMusic: 'https://music.youtube.com/playlist?list=OLAK5uy_loMj9lXLtIo7Asw1oWfE-IGq8YzNFk5vg&si=FxsUGPLRN1O2H9DC',
+      deezer: 'https://link.deezer.com/s/338QLdZ4hHNav4F5D1KAL',
+      zvuk: 'https://zvuk.com/track/177409216',
+    },
+    tracks: [
+      { number: 1, name: 'Повезёт если так', duration: { minutes: 2, seconds: 55 } },
+    ],
+  },
+  {
+    author: 'Blue Hour Apparitions',
     year: 2026,
     name: 'in search of time',
     slug: 'in-search-of-time',

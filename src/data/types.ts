@@ -21,6 +21,7 @@ export interface Track {
 
 export interface Release {
   author: string;
+  coAuthor?: string;
   year: number;
   name: string;
   slug: string;

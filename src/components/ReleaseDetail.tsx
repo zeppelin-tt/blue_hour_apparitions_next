@@ -49,7 +49,11 @@ const ReleaseDetail: React.FC<ReleaseDetailProps> = ({ release }) => {
           )}
         </div>
         <h2 className="release-detail__name">{release.name}</h2>
-        <p className="release-detail__artist">{release.author}</p>
+        <p className="release-detail__artist">
+          {release.coAuthor
+            ? <>{release.coAuthor} <span className="release-detail__coauthor">and {release.author}</span></>
+            : release.author}
+        </p>
       </div>
 
       <div className="release-detail__divider" />

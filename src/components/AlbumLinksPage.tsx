@@ -71,7 +71,11 @@ const AlbumLinksPage: React.FC<AlbumLinksPageProps> = ({ slug }) => {
         </div>
 
         {/* 5. Порядок: исполнитель → название → год+бейдж */}
-        <p className="alp__artist">{release.author.toUpperCase()}</p>
+        <p className="alp__artist">
+          {release.coAuthor
+            ? `${release.coAuthor.toUpperCase()} and ${release.author.toUpperCase()}`
+            : release.author.toUpperCase()}
+        </p>
         <h1 className="alp__title">{release.name}</h1>
         <div className="alp__meta">
           <span className="alp__year">{release.year}</span>
